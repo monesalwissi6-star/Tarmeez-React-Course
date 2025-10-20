@@ -6,6 +6,29 @@ import Post from "./Post";
 import SideMenu from "./SideMenu";
 
 function App() {
+
+
+  const posts =[
+    {
+      id:1,
+      postName:"اكاديمية ترميز",
+      postBody:"اكاديميه مخصصه لتعلم البرمجه",
+    },
+    {
+      id:2,
+      postName:"اكاديمية ترميز",
+      postBody:"اكاديميه مخصصه لتعلم البرمجه",
+    },
+    {
+      id:3,
+      postName:"اكاديمية ترميز",
+      postBody:"اكاديميه مخصصه لتعلم البرمجه",
+    },
+  ]
+
+  const postList = posts.map((post)=>{
+    return<Post key={post.id} postName={post.postName}/>
+  })
   return (
     <div className="App">
       <Header />
@@ -17,13 +40,7 @@ function App() {
         >
           {/* == POSTS CONTAINER == */}
           <div style={{ width: "70%" }}>
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
+          {postList}
           </div>
 
           <div style={{ width: "30%", marginTop: "25px" }}>
